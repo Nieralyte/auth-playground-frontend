@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app='app'>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<!--<title>blah</title>-->
+
+<link rel='stylesheet' href='/libs/_vendor/_web/bootstrap/css/bootstrap.css'>
+<link rel='stylesheet' href='/libs/_vendor/_web/angular-xeditable.css'>
+
+<link rel='stylesheet' href='/styles/ng-bootstrap-extras.css'>
+<link rel='stylesheet' href='/styles/my-styles.css'>
+<link rel='stylesheet' href='/styles/dev-easy-colors.css'>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='row top-margin'>
+      <div class='col-xs-12'>
+        <h3 class='pull-left no-margins'>hi</h3>
+        <my-auth class='pull-right'></my-auth>
+      </div>
+    </div>
+    
+    <div class='row top-margin' ng-controller='FooCtrl'>
+      <div class='col-xs-4 clearfix'>
+        <ul class='list-group pull-left' style='min-width: 200px'>
+          <my-item
+            ng-repeat='t in things'
+            ng-model='t.name'
+            on-remove='my.remove(t, things)'>
+          </my-item>
+        </ul>
+      </div>
+      
+      <div class='col-xs-8 clearfix'>
+        <pre class='pre-scrollable'>{{my.inspect(this)}}</pre>
+      </div>
+    </div>
+  </div>
+
+<script src='/libs/_vendor/_web/lodash-fp.js'></script>
+<script>Object.defineProperty(_.prototype, 'v', {get: _.prototype.value})</script>
+<script src='/libs/_vendor/_web/ramda.js'></script>
+
+<script src='/libs/_vendor/_web/angular.js'></script>
+<script src='/libs/_vendor/_web/angular-cookies.js'></script>
+<!--<script src='/libs/_vendor/_web/angular-route.js'></script>-->
+
+<script src='/libs/_vendor/_web/ui-bootstrap-tpls.js'></script>
+<script src='/libs/_vendor/_web/angular-xeditable.js'></script>
+
+<!--<script src='/libs/_vendor/_web/breeze.debug.js'></script>-->
+<!--<script src='/libs/_vendor/_web/breeze.bridge.angular.js'></script>-->
+<!--<script src='/libs/_vendor/_web/breeze.metadata-helper.js'></script>-->
+
+<script src='/libs/nieralyte-utils/dist-web/index.js'></script>
+<script src='index.js'></script>
+</body>
+</html>
